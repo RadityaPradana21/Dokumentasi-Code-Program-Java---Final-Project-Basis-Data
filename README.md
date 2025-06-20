@@ -1,46 +1,96 @@
-# Booking Studio Musik - Final Project
+---
 
-Repository ini berisi kode program untuk tugas mata kuliah Basis Data.
+# 🎶 Sistem Manajemen Booking Studio Musik 🎧
 
-## Deskripsi Project
+Final Project - Mata Kuliah Basis Data
 
-Aplikasi simulasi sistem booking studio musik berbasis Java.  
-Beberapa fitur utama yang diimplementasikan:
+Aplikasi ini merupakan sistem informasi berbasis Java & MySQL yang dirancang untuk membantu pengelolaan pemesanan studio musik secara digital. Melalui sistem ini, pengguna dapat mendaftar sebagai member, memesan studio musik, memilih alat musik yang tersedia, serta melihat jadwal booking dengan rapi dan terintegrasi.
 
-- Pendaftaran User
-- Pendaftaran Studio Musik
-- Pendaftaran Alat Musik
-- Proses Booking Studio Musik
-- Penjadwalan dan pengelolaan jadwal booking
-- Simulasi Database menggunakan MySQL & JDBC
-- Implementasi struktur data Stack dan Queue (Linked List)
 
-## Struktur File
+---
 
-- `DBConnection.java` — Simulasi koneksi database menggunakan JDBC
-- `User.java` — Model data User
-- `StudioMusik.java` — Model data Studio Musik
-- `AlatMusik.java` — Model data Alat Musik
-- `Booking.java` — Model data Booking Studio
-- `DetailBooking.java` — Model data Detail Booking
-- `JadwalBooking.java` — Model data Jadwal Booking
-- `UserDAO.java` — Operasi CRUD untuk User
-- `StudioMusikDAO.java` — Operasi CRUD untuk Studio Musik
-- `AlatMusikDAO.java` — Operasi CRUD untuk Alat Musik
-- `BookingDAO.java` — Operasi CRUD untuk Booking
-- `DetailBookingDAO.java` — Operasi CRUD untuk Detail Booking
-- `JadwalBookingDAO.java` — Operasi CRUD untuk Jadwal Booking
 
-## Cara Menjalankan
+## 👥 Anggota Kelompok
 
-1. Pastikan sudah menginstall MySQL Server dan mengatur database sesuai kebutuhan.
-2. Sesuaikan konfigurasi koneksi database pada file `DBConnection.java`.
-3. Compile semua file Java menggunakan terminal atau IDE favorit kamu (NetBeans, IntelliJ IDEA, Eclipse, dsb).
-4. Jalankan program utama.
+### Nama Lengkap	            NPM
 
-## Anggota Kelompok 
+## Ahmad Kusma Rizqi M.	 (240820201097)
+## Raditya Taufiqul A. P. (240820201116)
+## Choirul Wahyu Adji	   (240820201122)
+## Dwi Anggita	           (240820201135)
 
-1. Ahmad Kusma Rizqi M.   (097)
-2. Raditya Taufiqul A. P. (116)
-3. Choirul Wahyu Adji     (122)
-4. Dwi Anggita            (135)
+
+
+---
+
+## 🚀 Fitur Unggulan
+
+Pendaftaran & Manajemen User Mencatat data user seperti nama, kontak, email, serta mengelompokkan berdasarkan peran.
+
+Manajemen Studio Musik & Alat Musik Menyimpan data studio dan alat musik yang bisa digunakan saat booking.
+
+Pemesanan Studio Musik Pengguna dapat memesan studio dan memilih alat musik dalam satu sesi booking.
+
+Penjadwalan Otomatis Menampilkan slot waktu kosong dan menghindari bentrok jadwal.
+
+CLI Modular Menggunakan konsep CLI terpisah (Command Line Interface) untuk setiap fitur utama, sehingga memudahkan pengembangan dan pemeliharaan.
+
+CRUD Database Otomatis (DAO) Semua operasi data di-handle melalui DAO untuk memastikan struktur kode tetap bersih, reusable, dan sesuai standar OOP.
+
+
+
+---
+
+## 📁 Struktur File Penting
+
+File/Folder	Deskripsi Singkat
+
+UserCLI.java	Menu CLI untuk manajemen user
+StudioCLI.java	Menu CLI untuk studio musik
+AlatMusikCLI.java	Menu CLI untuk alat musik
+ReservasiCLI.java	Menu CLI untuk pemesanan studio
+UserDAO.java	Koneksi dan operasi database untuk user
+StudioMusikDAO.java	Koneksi dan operasi database untuk studio
+AlatMusikDAO.java	Koneksi dan operasi database untuk alat musik
+BookingDAO.java	Proses booking dan penyimpanan ke database
+Main.java	Entry point aplikasi
+DBConnection.java	Koneksi database menggunakan JDBC
+
+
+
+---
+
+## 🛠️ Cara Menjalankan Program
+
+### 💡 Prasyarat
+
+Java Development Kit (JDK)
+
+MySQL Server
+
+JDBC Connector (mysql-connector-j-<versi>.jar)
+
+
+### 📦 Step 1: Compile Semua File Java
+
+javac -d bin -cp "lib/mysql-connector-j-8.0.33.jar" -sourcepath . *.java
+
+### ▶️ Step 2: Jalankan Program
+
+java -cp "bin;lib/mysql-connector-j-8.0.33.jar" Main
+
+
+---
+
+## 🧠 Tentang CLI & DAO
+
+CLI (Command Line Interface)
+Merupakan kelas turunan dari Main yang berfungsi mengelola menu utama per fitur (User, Studio, Alat Musik, Booking).
+Tujuannya adalah untuk membuat source code lebih modular dan mudah dipahami.
+
+DAO (Data Access Object)
+Berfungsi sebagai jembatan antara aplikasi dan database MySQL. Dengan DAO, seluruh logika database (INSERT, SELECT, UPDATE, DELETE) dipisahkan dari logika tampilan/menu, sehingga mendukung prinsip clean code.
+
+
+
+---
